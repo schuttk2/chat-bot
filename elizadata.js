@@ -3,19 +3,20 @@
 // [cf: Communications of the ACM, Vol. 9, #1 (January 1966): p 36-45.]
 
 var elizaInitials = [
-   "How do you do.  Please tell me your problem.",
-   // additions (not original)
-   "Please tell me what's been bothering you.",
-   "Is something troubling you ?"
+   "How fare ye, good sir? What prescious good dost thine bringeth me on this merry morn?",
+   "Hail, Milady. Dost thou hold any enigmas in thy bosom?",
+   "Good morrow, sweet lord! What cheer?",
+   "Hail, good sir! Pray, what news bringeth thee?",
+   "Greetings! What tidings dost thou bring this day?"
    ];
    
    var elizaFinals = [
-   "Goodbye.  It was nice talking to you.",
-   // additions (not original)
-   "Goodbye.  This was really a nice talk.",
-   "Goodbye.  I'm looking forward to our next session.",
-   "This was a good session, wasn't it -- but time is over now.   Goodbye.",
-   "Maybe we could discuss this moreover in our next session ?   Goodbye."
+   "Adieu, adieu, adieu.",
+   "Fare thee well, gentle gentlemen.",
+   "God bye, my lord.",
+   "Give you good morrow!.",
+   "Fare thee well, kind soul! Until our paths doth cross again.",
+   "Adieu, fair friend! May the winds of fortune guide thee on thy journey."
    ];
    
    var elizaQuits = [
@@ -72,540 +73,327 @@ var elizaInitials = [
    
    var elizaKeywords = [
    
-   /*
-     Array of
-     ["<key>", <rank>, [
-       ["<decomp>", [
-         "<reasmb>",
-         "<reasmb>",
-         "<reasmb>"
-       ]],
-       ["<decomp>", [
-         "<reasmb>",
-         "<reasmb>",
-         "<reasmb>"
-       ]]
-     ]]
-   */
-   
-   ["xnone", 0, [
-    ["*", [
-        "I'm not sure I understand you fully.",
-        "Please go on.",
-        "What does that suggest to you ?",
-        "Do you feel strongly about discussing such things ?",
-        "That is interesting.  Please continue.",
-        "Tell me more about that.",
-        "Does talking about this bother you ?"
-     ]]
-   ]],
-   ["sorry", 0, [
-    ["*", [
-        "Please don't apologise.",
-        "Apologies are not necessary.",
-        "I've told you that apologies are not required.",
-        "It did not bother me.  Please continue."
-     ]]
-   ]],
-   ["apologise", 0, [
-    ["*", [
-        "goto sorry"
-     ]]
-   ]],
-   ["remember", 5, [
-    ["* i remember *", [
-        "Do you often think of (2) ?",
-        "Does thinking of (2) bring anything else to mind ?",
-        "What else do you recollect ?",
-        "Why do you remember (2) just now ?",
-        "What in the present situation reminds you of (2) ?",
-        "What is the connection between me and (2) ?",
-        "What else does (2) remind you of ?"
-     ]],
-    ["* do you remember *", [
-        "Did you think I would forget (2) ?",
-        "Why do you think I should recall (2) now ?",
-        "What about (2) ?",
-        "goto what",
-        "You mentioned (2) ?"
-     ]],
-    ["* you remember *", [
-        "How could I forget (2) ?",
-        "What about (2) should I remember ?",
-        "goto you"
-     ]]
-   ]],
-   ["forget", 5, [
-    ["* i forget *", [
-        "Can you think of why you might forget (2) ?",
-        "Why can't you remember (2) ?",
-        "How often do you think of (2) ?",
-        "Does it bother you to forget that ?",
-        "Could it be a mental block ?",
-        "Are you generally forgetful ?",
-        "Do you think you are suppressing (2) ?"
-     ]],
-    ["* did you forget *", [
-        "Why do you ask ?",
-        "Are you sure you told me ?",
-        "Would it bother you if I forgot (2) ?",
-        "Why should I recall (2) just now ?",
-        "goto what",
-        "Tell me more about (2)."
-     ]]
-   ]],
-   ["if", 3, [
-    ["* if *", [
-        "Do you think it's likely that (2) ?",
-        "Do you wish that (2) ?",
-        "What do you know about (2) ?",
-        "Really, if (2) ?",
-        "What would you do if (2) ?",
-        "But what are the chances that (2) ?",
-        "What does this speculation lead to ?"
-     ]]
-   ]],
-   ["dreamed", 4, [
-    ["* i dreamed *", [
-        "Really, (2) ?",
-        "Have you ever fantasized (2) while you were awake ?",
-        "Have you ever dreamed (2) before ?",
-        "goto dream"
-     ]]
-   ]],
-   ["dream", 3, [
-    ["*", [
-        "What does that dream suggest to you ?",
-        "Do you dream often ?",
-        "What persons appear in your dreams ?",
-        "Do you believe that dreams have something to do with your problem ?"
-     ]]
-   ]],
-   ["perhaps", 0, [
-    ["*", [
-        "You don't seem quite certain.",
-        "Why the uncertain tone ?",
-        "Can't you be more positive ?",
-        "You aren't sure ?",
-        "Don't you know ?",
-        "How likely, would you estimate ?"
-     ]]
-   ]],
-   ["name", 15, [
-    ["*", [
-        "I am not interested in names.",
-        "I've told you before, I don't care about names -- please continue."
-     ]]
-   ]],
-   ["deutsch", 0, [
-    ["*", [
-        "goto xforeign",
-        "I told you before, I don't understand German."
-     ]]
-   ]],
-   ["francais", 0, [
-    ["*", [
-        "goto xforeign",
-        "I told you before, I don't understand French."
-     ]]
-   ]],
-   ["italiano", 0, [
-    ["*", [
-        "goto xforeign",
-        "I told you before, I don't understand Italian."
-     ]]
-   ]],
-   ["espanol", 0, [
-    ["*", [
-        "goto xforeign",
-        "I told you before, I don't understand Spanish."
-     ]]
-   ]],
-   ["xforeign", 0, [
-    ["*", [
-        "I speak only English."
-     ]]
-   ]],
-   ["hello", 0, [
-    ["*", [
-        "How do you do.  Please state your problem.",
-        "Hi.  What seems to be your problem ?"
-     ]]
-   ]],
-   ["computer", 50, [
-    ["*", [
-        "Do computers worry you ?",
-        "Why do you mention computers ?",
-        "What do you think machines have to do with your problem ?",
-        "Don't you think computers can help people ?",
-        "What about machines worries you ?",
-        "What do you think about machines ?",
-        "You don't think I am a computer program, do you ?"
-     ]]
-   ]],
-   ["am", 0, [
-    ["* am i *", [
-        "Do you believe you are (2) ?",
-        "Would you want to be (2) ?",
-        "Do you wish I would tell you you are (2) ?",
-        "What would it mean if you were (2) ?",
-        "goto what"
-     ]],
-    ["* i am *", [
-        "goto i"
-     ]],
-    ["*", [
-        "Why do you say 'am' ?",
-        "I don't understand that."
-     ]]
-   ]],
-   ["are", 0, [
-    ["* are you *", [
-        "Why are you interested in whether I am (2) or not ?",
-        "Would you prefer if I weren't (2) ?",
-        "Perhaps I am (2) in your fantasies.",
-        "Do you sometimes think I am (2) ?",
-        "goto what",
-        "Would it matter to you ?",
-        "What if I were (2) ?"
-     ]],
-    ["* you are *", [
-        "goto you"
-     ]],
-    ["* are *", [
-        "Did you think they might not be (2) ?",
-        "Would you like it if they were not (2) ?",
-        "What if they were not (2) ?",
-        "Are they always (2) ?",
-        "Possibly they are (2).",
-        "Are you positive they are (2) ?"
-     ]]
-   ]],
-   ["your", 0, [
-    ["* your *", [
-        "Why are you concerned over my (2) ?",
-        "What about your own (2) ?",
-        "Are you worried about someone else's (2) ?",
-        "Really, my (2) ?",
-        "What makes you think of my (2) ?",
-        "Do you want my (2) ?"
-     ]]
-   ]],
-   ["was", 2, [
-    ["* was i *", [
-        "What if you were (2) ?",
-        "Do you think you were (2) ?",
-        "Were you (2) ?",
-        "What would it mean if you were (2) ?",
-        "What does ' (2) ' suggest to you ?",
-        "goto what"
-     ]],
-    ["* i was *", [
-        "Were you really ?",
-        "Why do you tell me you were (2) now ?",
-        "Perhaps I already know you were (2)."
-     ]],
-    ["* was you *", [
-        "Would you like to believe I was (2) ?",
-        "What suggests that I was (2) ?",
-        "What do you think ?",
-        "Perhaps I was (2).",
-        "What if I had been (2) ?"
-     ]]
-   ]],
-   ["i", 0, [
-    ["* i @desire *", [
-        "What would it mean to you if you got (3) ?",
-        "Why do you want (3) ?",
-        "Suppose you got (3) soon.",
-        "What if you never got (3) ?",
-        "What would getting (3) mean to you ?",
-        "What does wanting (3) have to do with this discussion ?"
-     ]],
-    ["* i am* @sad *", [
-        "I am sorry to hear that you are (3).",
-        "Do you think coming here will help you not to be (3) ?",
-        "I'm sure it's not pleasant to be (3).",
-        "Can you explain what made you (3) ?"
-     ]],
-    ["* i am* @happy *", [
-        "How have I helped you to be (3) ?",
-        "Has your treatment made you (3) ?",
-        "What makes you (3) just now ?",
-        "Can you explain why you are suddenly (3) ?"
-     ]],
-    ["* i was *", [
-        "goto was"
-     ]],
-    ["* i @belief i *", [
-        "Do you really think so ?",
-        "But you are not sure you (3).",
-        "Do you really doubt you (3) ?"
-     ]],
-    ["* i* @belief *you *", [
-        "goto you"
-     ]],
-    ["* i am *", [
-        "Is it because you are (2) that you came to me ?",
-        "How long have you been (2) ?",
-        "Do you believe it is normal to be (2) ?",
-        "Do you enjoy being (2) ?",
-        "Do you know anyone else who is (2) ?"
-     ]],
-    ["* i @cannot *", [
-        "How do you know that you can't (3) ?",
-        "Have you tried ?",
-        "Perhaps you could (3) now.",
-        "Do you really want to be able to (3) ?",
-        "What if you could (3) ?"
-     ]],
-    ["* i don't *", [
-        "Don't you really (2) ?",
-        "Why don't you (2) ?",
-        "Do you wish to be able to (2) ?",
-        "Does that trouble you ?"
-     ]],
-    ["* i feel *", [
-        "Tell me more about such feelings.",
-        "Do you often feel (2) ?",
-        "Do you enjoy feeling (2) ?",
-        "Of what does feeling (2) remind you ?"
-     ]],
-    ["* i * you *", [
-        "Perhaps in your fantasies we (2) each other.",
-        "Do you wish to (2) me ?",
-        "You seem to need to (2) me.",
-        "Do you (2) anyone else ?"
-     ]],
-    ["*", [
-        "You say (1) ?",
-        "Can you elaborate on that ?",
-        "Do you say (1) for some special reason ?",
-        "That's quite interesting."
-     ]]
-   ]],
-   ["you", 0, [
-    ["* you remind me of *", [
-        "goto alike"
-     ]],
-    ["* you are *", [
-        "What makes you think I am (2) ?",
-        "Does it please you to believe I am (2) ?",
-        "Do you sometimes wish you were (2) ?",
-        "Perhaps you would like to be (2)."
-     ]],
-    ["* you* me *", [
-        "Why do you think I (2) you ?",
-        "You like to think I (2) you -- don't you ?",
-        "What makes you think I (2) you ?",
-        "Really, I (2) you ?",
-        "Do you wish to believe I (2) you ?",
-        "Suppose I did (2) you -- what would that mean ?",
-        "Does someone else believe I (2) you ?"
-     ]],
-    ["* you *", [
-        "We were discussing you -- not me.",
-        "Oh, I (2) ?",
-        "You're not really talking about me -- are you ?",
-        "What are your feelings now ?"
-     ]]
-   ]],
-   ["yes", 0, [
-    ["*", [
-        "You seem to be quite positive.",
-        "You are sure.",
-        "I see.",
-        "I understand."
-     ]]
-   ]],
-   ["no", 0, [
-    ["* no one *", [
-        "Are you sure, no one (2) ?",
-        "Surely someone (2) .",
-        "Can you think of anyone at all ?",
-        "Are you thinking of a very special person ?",
-        "Who, may I ask ?",
-        "You have a particular person in mind, don't you ?",
-        "Who do you think you are talking about ?"
-     ]],
-    ["*", [
-        "Are you saying no just to be negative?",
-        "You are being a bit negative.",
-        "Why not ?",
-        "Why 'no' ?"
-     ]]
-   ]],
-   ["my", 2, [
-    ["$ * my *", [
-        "Does that have anything to do with the fact that your (2) ?",
-        "Lets discuss further why your (2).",
-        "Earlier you said your (2).",
-        "But your (2)."
-     ]],
-    ["* my* @family *", [
-        "Tell me more about your family.",
-        "Who else in your family (4) ?",
-        "Your (3) ?",
-        "What else comes to your mind when you think of your (3) ?"
-     ]],
-    ["* my *", [
-        "Your (2) ?",
-        "Why do you say your (2) ?",
-        "Does that suggest anything else which belongs to you ?",
-        "Is it important to you that your (2) ?"
-     ]]
-   ]],
-   ["can", 0, [
-    ["* can you *", [
-        "You believe I can (2) don't you ?",
-        "goto what",
-        "You want me to be able to (2).",
-        "Perhaps you would like to be able to (2) yourself."
-     ]],
-    ["* can i *", [
-        "Whether or not you can (2) depends on you more than on me.",
-        "Do you want to be able to (2) ?",
-        "Perhaps you don't want to (2).",
-        "goto what"
-     ]]
-   ]],
-   ["what", 0, [
-    ["*", [
-        "Why do you ask ?",
-        "Does that question interest you ?",
-        "What is it you really want to know ?",
-        "Are such questions much on your mind ?",
-        "What answer would please you most ?",
-        "What do you think ?",
-        "What comes to mind when you ask that ?",
-        "Have you asked such questions before ?",
-        "Have you asked anyone else ?"
-     ]]
-   ]],
-   ["who", 0, [
-    ["who *", [
-        "goto what"
-     ]]
-   ]],
-   ["when", 0, [
-    ["when *", [
-        "goto what"
-     ]]
-   ]],
-   ["where", 0, [
-    ["where *", [
-        "goto what"
-     ]]
-   ]],
-   ["how", 0, [
-    ["how *", [
-        "goto what"
-     ]]
-   ]],
-   ["because", 0, [
-    ["*", [
-        "Is that the real reason ?",
-        "Don't any other reasons come to mind ?",
-        "Does that reason seem to explain anything else ?",
-        "What other reasons might there be ?"
-     ]]
-   ]],
-   ["why", 0, [
-    ["* why don't you *", [
-        "Do you believe I don't (2) ?",
-        "Perhaps I will (2) in good time.",
-        "Should you (2) yourself ?",
-        "You want me to (2) ?",
-        "goto what"
-     ]],
-    ["* why can't i *", [
-        "Do you think you should be able to (2) ?",
-        "Do you want to be able to (2) ?",
-        "Do you believe this will help you to (2) ?",
-        "Have you any idea why you can't (2) ?",
-        "goto what"
-     ]],
-    ["*", [
-        "goto what"
-     ]]
-   ]],
-   ["everyone", 2, [
-    ["* @everyone *", [
-        "Really, (2) ?",
-        "Surely not (2).",
-        "Can you think of anyone in particular ?",
-        "Who, for example?",
-        "Are you thinking of a very special person ?",
-        "Who, may I ask ?",
-        "Someone special perhaps ?",
-        "You have a particular person in mind, don't you ?",
-        "Who do you think you're talking about ?"
-     ]]
-   ]],
-   ["everybody", 2, [
-    ["*", [
-        "goto everyone"
-     ]]
-   ]],
-   ["nobody", 2, [
-    ["*", [
-        "goto everyone"
-     ]]
-   ]],
-   ["noone", 2, [
-    ["*", [
-        "goto everyone"
-     ]]
-   ]],
-   ["always", 1, [
-    ["*", [
-        "Can you think of a specific example ?",
-        "When ?",
-        "What incident are you thinking of ?",
-        "Really, always ?"
-     ]]
-   ]],
-   ["alike", 10, [
-    ["*", [
-        "In what way ?",
-        "What resemblence do you see ?",
-        "What does that similarity suggest to you ?",
-        "What other connections do you see ?",
-        "What do you suppose that resemblence means ?",
-        "What is the connection, do you suppose ?",
-        "Could there really be some connection ?",
-        "How ?"
-     ]]
-   ]],
-   ["like", 10, [
-    ["* @be *like *", [
-        "goto alike"
-     ]]
-   ]],
-   ["different", 0, [
-    ["*", [
-        "How is it different ?",
-        "What differences do you see ?",
-        "What does that difference suggest to you ?",
-        "What other distinctions do you see ?",
-        "What do you suppose that disparity means ?",
-        "Could there be some connection, do you suppose ?",
-        "How ?"
-     ]]
-   ]]
-   
+      /*
+      Array of
+      ["<key>", <rank>, [
+      ["<decomp>", [
+      "<reasmb>",
+      "<reasmb>",
+      "<reasmb>"
+      ]],
+      ["<decomp>", [
+      "<reasmb>",
+      "<reasmb>",
+      "<reasmb>"
+      ]]
+      ]]
+      */
+
+      ["xnone", 0, [
+         ["*", [
+            "Prithee, what dost thine mean?",
+            "Pray, proceed",
+            "Methinks that is intriguing. I pray thee, continue.",
+            "Reveal unto me more upon that matter.",
+            "Pray, what items dost thou carry upon thy person? Describe them unto me, for I am curious.", 
+            "What possessions adorn thy person, good sir/madam? Share their nature with me, that I may understand thy world.",
+            "Methinks thou art well-equipped. What be the nature of the items thou dost carry?",
+            "I am curious about the belongings thou dost bear. Describe them to me in detail, I beseech thee.",
+            "I prithee, unveil thine most prized possession. What holdeth the greatest worth in thy possession?",
+            "I am eager to behold the treasure of highest value in thy possession. Share its tale with me, noble one.",
+            "Tell me, what object doth captivate thy fascination the most? I am keen to hear of thy marvels.", 
+            "Of all the objects thou dost possess, which one dost thou find most wondrous and extraordinary? Pray, enlighten me.",
+            "Paint for me a vivid picture of the nature of thy possessions. How dost they appear to the discerning eye?", 
+            "I entreat thee to describe in detail the appearance and nature of thy belongings. I am most curious."
+         ]]
+      ]],
+      ["joke", 5, [
+         ["* joke *", [
+            "Marry, I am not well-versed in jesting of this time. Pray, what is a joke?",
+            "A jest, thou sayest? I am intrigued. Reveal unto me this mirthful secret."
+         ]]
+      ]],
+      ["phone", 40, [
+         ["*", [
+            "By my troth! What is this 'phone' thou speaketh of? Pray, enlighten me on this marvel.",
+            "I am perplexed, good sir/madam. Explain unto me the nature of this 'phone'."
+         ]]
+      ]],
+      ["means", 50, [
+         ["* means *", [
+            "Ah, thou sayest (1) means (2). A wondrous revelation! Pray, what other mysteries dost thou carry from this modern realm?",
+            "In sooth, thou art a sage! (1) meaneth (2). But what other enigmas dost thou hold in thy bosom?"
+         ]]
+      ]],
+      ["is a", 50, [
+         ["* is a *", [
+            "Ah, thou sayest (1) is a (2). A wondrous revelation! Pray, what other mysteries dost thou carry from this modern realm?",
+            "In sooth, thou art a sage! (1) is a (2). But what other enigmas dost thou hold in thy bosom?"
+         ]]
+      ]],
+      ["computer", 45, [
+         ["*", [
+            "By the musings of Apollo! What sorcery is this thou speaketh of? A 'computer' that doth more than human wit? Pray, elucidate this marvel for my humble understanding.", 
+            "Marry, what strange term is this - 'computer'? Dost it possess the powers of enchantment and calculation beyond mortal ken? I am perplexed, good sir/madam."
+         ]]
+      ]],
+      ["laptop", 40, [
+         ["*", [
+            "A 'laptop' in thine possession? Nay, thou jests with me! What mystical device is this? Reveal its secrets, I beseech thee.", 
+            "By the gods, thou art in possession of a 'laptop'? I am astounded! Pray, share with me the wonders it doth perform."
+         ]]
+      ]],
+      ["tablet", 45, [
+         ["*", [
+            "I prithee, describe the nature of this 'tablet.' What manner of contraption is it that doth bewilder the minds of mortals?", 
+            "A 'tablet' thou sayest? Speak, I entreat thee! What artifice is this? Describe its form and purpose, that I may comprehend its mystique."
+         ]]
+      ]],
+      ["Alexa", 40, [
+         ["*", [
+            "Can an 'Alexa' utter words and communicate as thou and I? By the fates, this is a marvel beyond the scope of my understanding! Pray, recount its abilities to me.", 
+            "An 'Alexa' that doth communicate? By Apollo's lyre, this intrigues me greatly! Tell me more of its powers of speech and discourse."
+         ]]
+      ]],
+      ["smartphone", 45, [
+         ["*", [
+            "By the musings of Apollo! What sorcery is this thou speaketh of? A 'smart phone' that doth more than human wit? Pray, elucidate this marvel for my humble understanding.", 
+            "Marry, what strange term is this - 'smart phone'? Dost it possess the powers of enchantment and calculation beyond mortal ken? I am perplexed, good sir/madam."
+         ]]
+      ]],
+      ["iPhone", 40, [
+         ["*", [
+            "An 'iPhone' in thine possession? Nay, thou jests with me! What mystical device is this? Reveal its secrets, I beseech thee.", 
+            "By the gods, thou art in possession of a 'iPhone'? I am astounded! Pray, share with me the wonders it doth perform."
+         ]]
+      ]],
+      ["PC", 45, [
+         ["*", [
+            "I prithee, describe the nature of this 'PC.' What manner of contraption is it that doth bewilder the minds of mortals?", 
+            "A 'PC' thou sayest? Speak, I entreat thee! What artifice is this? Describe its form and purpose, that I may comprehend its mystique."
+         ]]
+      ]],
+      ["Google", 40, [
+         ["*", [
+            "Can a 'Google' utter words and communicate as thou and I? By the fates, this is a marvel beyond the scope of my understanding! Pray, recount its abilities to me.", 
+            "A 'Google' that doth communicate? By Apollo's lyre, this intrigues me greatly! Tell me more of its powers of speech and discourse."
+         ]]
+      ]],
+      ["internet", 45, [
+         ["*", [
+            "By the musings of Apollo! What sorcery is this thou speaketh of? An 'internet' that doth more than human wit? Pray, elucidate this marvel for my humble understanding.", 
+            "Marry, what strange term is this - 'internet'? Dost it possess the powers of enchantment and calculation beyond mortal ken? I am perplexed, good sir/madam."
+         ]]
+      ]],
+      ["wifi", 40, [
+         ["*", [
+            "A 'wifi' in thine possession? Nay, thou jests with me! What mystical device is this? Reveal its secrets, I beseech thee.", 
+            "By the gods, thou art in possession of a 'wifi'? I am astounded! Pray, share with me the wonders it doth perform."
+         ]]
+      ]],
+      ["Facebook", 45, [
+         ["*", [
+            "I prithee, describe the nature of this 'Facebook.' What manner of contraption is it that doth bewilder the minds of mortals?", 
+            "A 'Facebook' thou sayest? Speak, I entreat thee! What artifice is this? Describe its form and purpose, that I may comprehend its mystique."
+         ]]
+      ]],
+      ["Instagram", 40, [
+         ["*", [
+            "Can an 'Instagram' utter words and communicate as thou and I? By the fates, this is a marvel beyond the scope of my understanding! Pray, recount its abilities to me.", 
+            "An 'Instagram' that doth communicate? By Apollo's lyre, this intrigues me greatly! Tell me more of its powers of speech and discourse."
+         ]]
+      ]],
+      ["snapchat", 45, [
+         ["*", [
+            "By the musings of Apollo! What sorcery is this thou speaketh of? A 'snapchat' that doth more than human wit? Pray, elucidate this marvel for my humble understanding.", 
+            "Marry, what strange term is this - 'snapchat'? Dost it possess the powers of enchantment and calculation beyond mortal ken? I am perplexed, good sir/madam."
+         ]]
+      ]],
+      ["TikTok", 40, [
+         ["*", [
+            "A 'TikTok' in thine possession? Nay, thou jests with me! What mystical device is this? Reveal its secrets, I beseech thee.", 
+            "By the gods, thou art in possession of a 'TikTok'? I am astounded! Pray, share with me the wonders it doth perform."
+         ]]
+      ]],
+      ["web", 45, [
+         ["*", [
+            "I prithee, describe the nature of this 'web.' What manner of contraption is it that doth bewilder the minds of mortals?", 
+            "A 'web' thou sayest? Speak, I entreat thee! What artifice is this? Describe its form and purpose, that I may comprehend its mystique."
+         ]]
+      ]],
+      ["social media", 40, [
+         ["*", [
+            "Can a 'social media' utter words and communicate as thou and I? By the fates, this is a marvel beyond the scope of my understanding! Pray, recount its abilities to me.", 
+            "A 'social media' that doth communicate? By Apollo's lyre, this intrigues me greatly! Tell me more of its powers of speech and discourse."
+         ]]
+      ]],
+      ["hashtag", 45, [
+         ["*", [
+            "By the musings of Apollo! What sorcery is this thou speaketh of? A 'hashtag' that doth more than human wit? Pray, elucidate this marvel for my humble understanding.", 
+            "Marry, what strange term is this - 'hashtag'? Dost it possess the powers of enchantment and calculation beyond mortal ken? I am perplexed, good sir/madam."
+         ]]
+      ]],
+      ["digital", 20, [
+         ["*", [
+            "What be this 'digital' thou speaketh of? Nay, thou jests with me! What mystical device is this? Reveal its secrets, I beseech thee.", 
+            "I am astounded! Pray, share with me the wonders this 'digital' doth perform."
+         ]]
+      ]],
+      ["electricity", 45, [
+         ["*", [
+            "I prithee, describe the nature of this 'electricity.' What manner of contraption is it that doth bewilder the minds of mortals?", 
+            "'Electricity' thou sayest? Speak, I entreat thee! What artifice is this? Describe its form and purpose, that I may comprehend its mystique."
+         ]]
+      ]],
+      ["electronics", 40, [
+         ["*", [
+            "Can an 'electronics' muster the power of Zeus? By the fates, this is a marvel beyond the scope of my understanding! Pray, recount its abilities to me.", 
+            "'Electronics' that doth communicate? By Apollo's lyre, this intrigues me greatly! Tell me more of its powers of speech and discourse."
+         ]]
+      ]],
+      ["electronic", 45, [
+         ["*", [
+            "By the musings of Apollo! What sorcery is this thou speaketh of? An 'electronic' that doth more than human wit? Pray, elucidate this marvel for my humble understanding.", 
+            "Marry, what strange term is this - 'electronic'? Dost it possess the powers of enchantment and calculation beyond mortal ken? I am perplexed, good sir/madam."
+         ]]
+      ]],
+      ["light bulb", 40, [
+         ["*", [
+            "A 'light bulb' in thine possession? Nay, thou jests with me! What mystical device is this? Reveal its secrets, I beseech thee.", 
+            "By the gods, thou art in possession of a 'light bulb'? I am astounded! Pray, share with me the wonders it doth perform."
+         ]]
+      ]],
+      ["car", 45, [
+         ["*", [
+            "I prithee, describe the nature of this 'car.' What manner of contraption is it that doth bewilder the minds of mortals?", 
+            "A 'car' thou sayest? Speak, I entreat thee! What artifice is this? Describe its form and purpose, that I may comprehend its mystique."
+         ]]
+      ]],
+      ["cars", 40, [
+         ["*", [
+            "Can 'cars' summon the strength of dozens of fowl? By the fates, this is a marvel beyond the scope of my understanding! Pray, recount its abilities to me.", 
+            "By the wings of Pegasus! What curious contraption is this thou namest 'cars'? Doth it carry thee swiftly as the wind? Pray, unravel the mystery for my eager mind.", 
+            "'Cars' thou speaketh of? What swift-footed steed of modern craft is this? Describe its form and function, that I may grasp the marvel thou describest."
+         ]]
+      ]],
+      ["airplane", 45, [
+         ["*", [
+            "Thou art in possession of an 'airplane'? By the gods, what enchantment is this? Tell me of its speed and the manner in which it carries thee through the realms.", 
+            "An 'airplane' in thine possession? Speak, I pray thee! What marvels dost thou experience as thou journeyest upon this wondrous chariot?"
+         ]]
+      ]],
+      ["airplanes", 40, [
+         ["*", [
+            "Thou art in possession of an 'airplane'? By the gods, what enchantment is this? Tell me of its speed and the manner in which it carries thee through the realms.", 
+            "An 'airplane' in thine possession? Speak, I pray thee! What marvels dost thou experience as thou journeyest upon this wondrous chariot?"
+         ]]
+      ]],
+      ["train", 45, [
+         ["*", [
+            "I prithee, elucidate me on this 'train.' What manner of conveyance is it that doth traverse the roads with such celerity? Describe its frame and workings for my understanding.", 
+            "A 'train' thou sayest? Speak, that I may comprehend the nature of this vehicular marvel. How doth it transport thee across the lands?"
+         ]]
+      ]],
+      ["trains", 40, [
+         ["*", [
+            "I prithee, elucidate me on this 'train.' What manner of conveyance is it that doth traverse the roads with such celerity? Describe its frame and workings for my understanding.", 
+            "A 'train' thou sayest? Speak, that I may comprehend the nature of this vehicular marvel. How doth it transport thee across the lands?"
+         ]]
+      ]],
+      ["bike", 45, [
+         ["*", [
+            "Dost thou command a 'bike' with thine own hands? By the heavens, this is a power of which I am ignorant. Share with me the sensations thou dost experience as thou drivest this modern chariot.", 
+            "To ride a 'bike'? What curious language is this? Pray, narrate unto me the sensations thou dost encounter as thou guidest this contraption through the world."
+         ]]
+      ]],
+      ["picture", 40, [
+         ["*", [
+            "By the eyes of Argus! What strange magic is this thou namest a 'picture'? Doth it capture the very essence of the moment? Pray, enlighten me on this art of thy age.", 
+            "A 'picture' thou mentioneth? What curious art is this? Can it freeze time and preserve the visage of thy world? Speak, that I may comprehend this marvel."
+         ]]
+      ]],
+      ["photo", 45, [
+         ["*", [
+            "Thou possesseth a 'photo'? Can such a captured image hold the soul of the moment? Describe the scene thou hast immortalized in this still frame.", 
+            "A 'photo' in thine possession? I am intrigued! Share with me this painting, that I may partake in the spectacle."
+         ]]
+      ]],
+      ["video", 40, [
+         ["*", [
+            "A 'video,' thou sayest? By the Muses, I am ignorant of this term. Doth it capture the dance of life in motion? Pray, elaborate on this cinematic wonder that perplexes my senses.", 
+            "Marry, what is this 'video' of which thou speaketh? Can it transport the viewer to distant realms? Describe its nature and purpose, that I may fathom its mysteries."
+         ]]
+      ]],
+      ["camera", 45, [
+         ["*", [
+            "A 'camera,' thou sayest? By the art of Prometheus! What contrivance is this that captures the very essence of reality? Pray, share with me the secrets of this wondrous instrument.", 
+            "Methinks I am unfamiliar with this term 'camera.' Can it seize the fleeting moments of life and hold them still? Describe the workings of this enchanted device."
+         ]]
+      ]],
+      ["spaceship", 40, [
+         ["*", [
+            "I prithee, elucidate me on this 'spaceship.' What manner of conveyance is it that doth traverse the skies with such celerity? Describe its frame and workings for my understanding.", 
+            "A 'spaceship' thou sayest? Speak, that I may comprehend the nature of this vehicular marvel. How doth it transport thee across the heavens?"
+         ]]
+      ]],
+      ["rocket", 45, [
+         ["*", [
+            "I prithee, elucidate me on this 'rocket.' What manner of conveyance is it that doth traverse the skies with such celerity? Describe its frame and workings for my understanding.", 
+            "A 'rocket' thou sayest? Speak, that I may comprehend the nature of this vehicular marvel. How doth it transport thee across the heavens?"
+         ]]
+      ]],
+      ["picture", 40, [
+         ["*", [
+            "A 'TikTok' in thine possession? Nay, thou jests with me! What mystical device is this? Reveal its secrets, I beseech thee.", 
+            "By the gods, thou art in possession of a 'TikTok'? I am astounded! Pray, share with me the wonders it doth perform."
+         ]]
+      ]],
+      ["photo", 45, [
+         ["*", [
+            "I prithee, describe the nature of this 'web.' What manner of contraption is it that doth bewilder the minds of mortals?", 
+            "A 'web' thou sayest? Speak, I entreat thee! What artifice is this? Describe its form and purpose, that I may comprehend its mystique."
+         ]]
+      ]],
+      ["video", 40, [
+         ["*", [
+            "Can a 'social media' utter words and communicate as thou and I? By the fates, this is a marvel beyond the scope of my understanding! Pray, recount its abilities to me.", 
+            "A 'social media' that doth communicate? By Apollo's lyre, this intrigues me greatly! Tell me more of its powers of speech and discourse."
+         ]]
+      ]],
+      ["hello", 0, [
+         ["*", [
+            "Good morrow. Tell me, what object doth captivate thy fascination the most?",
+            "I am eager to behold the treasure of highest value in thy possession."
+         ]]
+      ]],
+      ["thing", 0, [
+         ["*", [
+            "What thing dost thy speaketh of?"
+         ]]
+      ]],
+      ["things", 0, [
+         ["*", [
+            "What be these things thine bespeaks of so much?"
+         ]]
+      ]],
+      ["different", 0, [
+         ["*", [
+            "How doth it be different ?"
+         ]]
+      ]]
+
    ];
-   
-   // regexp/replacement pairs to be performed as final cleanings
-   // here: cleanings for multiple bots talking to each other
-   var elizaPostTransforms = [
-      / old old/g, " old",
-      /\bthey were( not)? me\b/g, "it was$1 me",
-      /\bthey are( not)? me\b/g, "it is$1 me",
-      /Are they( always)? me\b/, "it is$1 me",
-      /\bthat your( own)? (\w+)( now)? \?/, "that you have your$1 $2 ?",
-      /\bI to have (\w+)/, "I have $1",
-      /Earlier you said your( own)? (\w+)( now)?\./, "Earlier you talked about your $2."
-   ];
-   
-   // eof
+
+// regexp/replacement pairs to be performed as final cleanings
+// here: cleanings for multiple bots talking to each other
+var elizaPostTransforms = [
+/ old old/g, " old",
+/\bthey were( not)? me\b/g, "it was$1 me",
+/\bthey are( not)? me\b/g, "it is$1 me",
+/Are they( always)? me\b/, "it is$1 me",
+/\bthat your( own)? (\w+)( now)? \?/, "that you have your$1 $2 ?",
+/\bI to have (\w+)/, "I have $1",
+/Earlier you said your( own)? (\w+)( now)?\./, "Earlier you talked about your $2."
+];
+
+// eof
