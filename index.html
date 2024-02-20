@@ -70,10 +70,15 @@
       BODY {
          background-image: url('parchment.jpg');
       }
-      H3{
+      H3 {
          font-family: "Jacquarda Bastarda 9";
          font-size: 400%;
          margin: 0;
+      }
+      TABLE {
+         border: 50px solid transparent;
+         padding: 0;
+         border-image: url(border.png) 275;
       }
 
    </style>
@@ -86,7 +91,7 @@
    <H3>Eliza</H3>
    <TABLE BORDER="0" CELLSPACING="10" CELLPADDING="0">
    <FORM NAME="e_form" onsubmit="elizaStep();return false">
-   <TR><TD COLSPAN="2"><TEXTAREA NAME="e_display" COLS="60" ROWS="20"></TEXTAREA></TD></TR>
+   <TR ALIGN="middle"><TD COLSPAN="2" ><TEXTAREA NAME="e_display" COLS="60" ROWS="20" ></TEXTAREA></TD></TR>
    <TR VALIGN="middle">
       <TD><INPUT TYPE="text" NAME="e_input" SIZE="50"></TD>
       <TD ALIGN="right"><INPUT TYPE="submit" VALUE="&nbsp;Talk&nbsp;"> <INPUT TYPE="reset" VALUE="Reset" onClick="window.setTimeout('elizaReset()',100)"></TD>
