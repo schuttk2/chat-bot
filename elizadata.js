@@ -11,9 +11,7 @@ var elizaInitials = [
    ];
    
    var elizaFinals = [
-   "Adieu, adieu, adieu.",
-   "Fare thee well, gentle gentlemen.",
-   "God bye, my lord.",
+   "Adieu, my lord.",
    "Give you good morrow!.",
    "Fare thee well, kind soul! Until our paths doth cross again.",
    "Adieu, fair friend! May the winds of fortune guide thee on thy journey."
@@ -107,16 +105,10 @@ var elizaInitials = [
             "I entreat thee to describe in detail the appearance and nature of thy belongings. I am most curious."
          ]]
       ]],
-      ["joke", 5, [
-         ["* joke *", [
-            "Marry, I am not well-versed in jesting of this time. Pray, what is a joke?",
-            "A jest, thou sayest? I am intrigued. Reveal unto me this mirthful secret."
-         ]]
-      ]],
       ["phone", 40, [
          ["*", [
             "By my troth! What is this 'phone' thou speaketh of? Pray, enlighten me on this marvel.",
-            "I am perplexed, good sir/madam. Explain unto me the nature of this 'phone'."
+            "I am perplexed, good sir. Explain unto me the nature of this 'phone'."
          ]]
       ]],
       ["means", 50, [
@@ -139,13 +131,13 @@ var elizaInitials = [
       ]],
       ["laptop", 40, [
          ["*", [
-            "A 'laptop' in thine possession? Nay, thou jests with me! What mystical device is this? Reveal its secrets, I beseech thee.", 
+            "A 'laptop' in thine possession? Nay, thou jests with me! Reveal unto me why one would carry the top of another fellow's lap, I beseech thee.", 
             "By the gods, thou art in possession of a 'laptop'? I am astounded! Pray, share with me the wonders it doth perform."
          ]]
       ]],
       ["tablet", 45, [
          ["*", [
-            "I prithee, describe the nature of this 'tablet.' What manner of contraption is it that doth bewilder the minds of mortals?", 
+            "I prithee, describe the nature of this 'tablet.' What manner of this contraption differs from thine tablets of stone?", 
             "A 'tablet' thou sayest? Speak, I entreat thee! What artifice is this? Describe its form and purpose, that I may comprehend its mystique."
          ]]
       ]],
@@ -158,7 +150,7 @@ var elizaInitials = [
       ["smartphone", 45, [
          ["*", [
             "By the musings of Apollo! What sorcery is this thou speaketh of? A 'smart phone' that doth more than human wit? Pray, elucidate this marvel for my humble understanding.", 
-            "Marry, what strange term is this - 'smart phone'? Dost it possess the powers of enchantment and calculation beyond mortal ken? I am perplexed, good sir/madam."
+            "Marry, what strange term is this - 'smart phone'? Dost it possess the powers of enchantment and calculation beyond mortal ken? I am perplexed, good sir."
          ]]
       ]],
       ["iPhone", 40, [
@@ -187,43 +179,43 @@ var elizaInitials = [
       ]],
       ["wifi", 40, [
          ["*", [
-            "A 'wifi' in thine possession? Nay, thou jests with me! What mystical device is this? Reveal its secrets, I beseech thee.", 
-            "By the gods, thou art in possession of a 'wifi'? I am astounded! Pray, share with me the wonders it doth perform."
+            "What beist this 'wifi'? Thou jests with me! What mystical device is this? Reveal its secrets, I beseech thee.", 
+            "By the gods, I am astounded! Pray, share with me the wonders this 'wifi' doth perform."
          ]]
       ]],
       ["Facebook", 45, [
          ["*", [
-            "I prithee, describe the nature of this 'Facebook.' What manner of contraption is it that doth bewilder the minds of mortals?", 
+            "I prithee, describe the nature of this 'Facebook.' For what purpose would one needeth a face in thine book?", 
             "A 'Facebook' thou sayest? Speak, I entreat thee! What artifice is this? Describe its form and purpose, that I may comprehend its mystique."
          ]]
       ]],
       ["Instagram", 40, [
          ["*", [
-            "Can an 'Instagram' utter words and communicate as thou and I? By the fates, this is a marvel beyond the scope of my understanding! Pray, recount its abilities to me.", 
+            "Merlin's Beard! By the fates, this 'Instagram' sounds like a marvel beyond the scope of my understanding! Pray, recount its abilities to me.", 
             "An 'Instagram' that doth communicate? By Apollo's lyre, this intrigues me greatly! Tell me more of its powers of speech and discourse."
          ]]
       ]],
       ["snapchat", 45, [
          ["*", [
-            "By the musings of Apollo! What sorcery is this thou speaketh of? A 'snapchat' that doth more than human wit? Pray, elucidate this marvel for my humble understanding.", 
-            "Marry, what strange term is this - 'snapchat'? Dost it possess the powers of enchantment and calculation beyond mortal ken? I am perplexed, good sir/madam."
+            "By the musings of Apollo! What sorcery is this thou speaketh of? A snap of a chat? Pray, elucidate this marvel for my humble understanding.", 
+            "Marry, what strange term is this - 'snapchat'? Dost it possess the powers of enchantment beyond mortal ken? I am perplexed, good sir."
          ]]
       ]],
       ["TikTok", 40, [
          ["*", [
-            "A 'TikTok' in thine possession? Nay, thou jests with me! What mystical device is this? Reveal its secrets, I beseech thee.", 
-            "By the gods, thou art in possession of a 'TikTok'? I am astounded! Pray, share with me the wonders it doth perform."
+            "A 'TikTok' in thine possession? Nay, thou jests with me! What is a clock doing on thine person? Reveal its secrets, I beseech thee.", 
+            "By the gods, thou art in possession of a 'TikTok'? The sound thine clock chimes? I am astounded! Pray, share with me the wonders it doth perform."
          ]]
       ]],
       ["web", 45, [
          ["*", [
-            "I prithee, describe the nature of this 'web.' What manner of contraption is it that doth bewilder the minds of mortals?", 
-            "A 'web' thou sayest? Speak, I entreat thee! What artifice is this? Describe its form and purpose, that I may comprehend its mystique."
+            "I prithee, describe the nature of this 'web.' What manner of contraption is it that doth summon the power of the mighty spider?", 
+            "A 'web' thou sayest? Speak, I entreat thee! How art thou in command of such arachnid skills? Describe its form and purpose, that I may comprehend its mystique."
          ]]
       ]],
-      ["social media", 40, [
+      ["social media", 49, [
          ["*", [
-            "Can a 'social media' utter words and communicate as thou and I? By the fates, this is a marvel beyond the scope of my understanding! Pray, recount its abilities to me.", 
+            "Can 'social media' utter words and communicate amongst thou and I? By the fates, this is a marvel beyond the scope of my understanding! Pray, recount its abilities to me.", 
             "A 'social media' that doth communicate? By Apollo's lyre, this intrigues me greatly! Tell me more of its powers of speech and discourse."
          ]]
       ]],
@@ -248,13 +240,13 @@ var elizaInitials = [
       ["electronics", 40, [
          ["*", [
             "Can an 'electronics' muster the power of Zeus? By the fates, this is a marvel beyond the scope of my understanding! Pray, recount its abilities to me.", 
-            "'Electronics' that doth communicate? By Apollo's lyre, this intrigues me greatly! Tell me more of its powers of speech and discourse."
+            "'Electronics' that doth posess the power of Helios? Tell me more of its powers."
          ]]
       ]],
       ["electronic", 45, [
          ["*", [
             "By the musings of Apollo! What sorcery is this thou speaketh of? An 'electronic' that doth more than human wit? Pray, elucidate this marvel for my humble understanding.", 
-            "Marry, what strange term is this - 'electronic'? Dost it possess the powers of enchantment and calculation beyond mortal ken? I am perplexed, good sir/madam."
+            "Marry, what strange term is this - 'electronic'? Dost it possess the powers of enchantment and calculation beyond mortal ken? I am perplexed, good sir."
          ]]
       ]],
       ["light bulb", 40, [
@@ -276,7 +268,13 @@ var elizaInitials = [
             "'Cars' thou speaketh of? What swift-footed steed of modern craft is this? Describe its form and function, that I may grasp the marvel thou describest."
          ]]
       ]],
-      ["airplane", 45, [
+      ["bus", 45, [
+         ["*", [
+            "I prithee, describe the nature of this 'bus.' What manner of contraption is it that doth bewilder the minds of mortals?", 
+            "A 'bus' thou sayest? Speak, I entreat thee! What artifice is this? Describe its form and purpose, that I may comprehend its mystique."
+         ]]
+      ]],
+      ["airplane", 40, [
          ["*", [
             "Thou art in possession of an 'airplane'? By the gods, what enchantment is this? Tell me of its speed and the manner in which it carries thee through the realms.", 
             "An 'airplane' in thine possession? Speak, I pray thee! What marvels dost thou experience as thou journeyest upon this wondrous chariot?"
@@ -288,7 +286,7 @@ var elizaInitials = [
             "An 'airplane' in thine possession? Speak, I pray thee! What marvels dost thou experience as thou journeyest upon this wondrous chariot?"
          ]]
       ]],
-      ["train", 45, [
+      ["train", 40, [
          ["*", [
             "I prithee, elucidate me on this 'train.' What manner of conveyance is it that doth traverse the roads with such celerity? Describe its frame and workings for my understanding.", 
             "A 'train' thou sayest? Speak, that I may comprehend the nature of this vehicular marvel. How doth it transport thee across the lands?"
@@ -360,25 +358,65 @@ var elizaInitials = [
             "A 'social media' that doth communicate? By Apollo's lyre, this intrigues me greatly! Tell me more of its powers of speech and discourse."
          ]]
       ]],
+      ["painting", 5, [
+         ["*", [
+            "Pray, at last. I am indeed familiar with a painting. I prithee, reveal unto me more upon the wonders of thy world.", 
+         ]]
+      ]],
+      ["horse", 5, [
+         ["*", [
+            "Pray, at last. I am indeed familiar with a horse. I prithee, reveal unto me more upon the wonders of thy world.", 
+         ]]
+      ]],
+      ["horses", 5, [
+         ["*", [
+            "Pray, at last. I am indeed familiar with horses. I prithee, reveal unto me more upon the wonders of thy world.", 
+         ]]
+      ]],
+      ["carriage", 5, [
+         ["*", [
+            "Pray, at last. I am indeed familiar with a carriage. I prithee, reveal unto me more upon the wonders of thy world.", 
+         ]]
+      ]],
+      ["charriot", 5, [
+         ["*", [
+            "Pray, at last. I am indeed familiar with a charriot. I prithee, reveal unto me more upon the wonders of thy world.", 
+         ]]
+      ]],
+      ["chariot", 5, [
+         ["*", [
+            "Pray, at last. I am indeed familiar with a chariot. I prithee, reveal unto me more upon the wonders of thy world.", 
+         ]]
+      ]],
+      ["letter", 5, [
+         ["*", [
+            "Pray, at last. I am indeed familiar with a letter. I prithee, reveal unto me more upon the wonders of thy world.", 
+         ]]
+      ]],
+      ["letters", 5, [
+         ["*", [
+            "Pray, at last. I am indeed familiar with letters. I prithee, reveal unto me more upon the wonders of thy world.", 
+         ]]
+      ]],
       ["hello", 0, [
          ["*", [
             "Good morrow. Tell me, what object doth captivate thy fascination the most?",
             "I am eager to behold the treasure of highest value in thy possession."
          ]]
       ]],
-      ["thing", 0, [
+      ["thing", 10, [
          ["*", [
             "What thing dost thy speaketh of?"
          ]]
       ]],
-      ["things", 0, [
+      ["things", 10, [
          ["*", [
             "What be these things thine bespeaks of so much?"
          ]]
       ]],
       ["different", 0, [
          ["*", [
-            "How doth it be different ?"
+            "How doth it be different?"
          ]]
       ]]
 
